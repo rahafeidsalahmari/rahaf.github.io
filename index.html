@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rahaf — Finance, Cybersecurity & Ops</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0d1117;
+            --text: #c9d1d9;
+            --heading: #f0f6fc;
+            --muted: #8b949e;
+            --accent: #58a6ff;
+            --border: #30363d;
+            --code-bg: #161b22;
+            --tag-bg: #21262d;
+        }
+
+        [data-theme="light"] {
+            --bg: #ffffff;
+            --text: #24292f;
+            --heading: #111827;
+            --muted: #57606a;
+            --accent: #0969da;
+            --border: #d0d7de;
+            --code-bg: #f6f8fa;
+            --tag-bg: #eaeef2;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 5rem;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        nav a:hover, nav a.brand {
+            color: var(--heading);
+        }
+
+        nav a.brand {
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .theme-btn {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .theme-btn:hover {
+            color: var(--heading);
+            border-color: var(--muted);
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: var(--heading);
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        h3 {
+            font-size: 1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.4rem;
+        }
+
+        p {
+            margin-bottom: 1.1rem;
+            font-size: 0.98rem;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            margin-left: 1.2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Code & Technical Blocks (Like coutinho21) */
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: var(--tag-bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.85em;
+            color: var(--heading);
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1rem;
+            overflow-x: auto;
+            margin: 1.2rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .project-card {
+            margin-bottom: 1.8rem;
+        }
+
+        .meta {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .tag {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            background: var(--tag-bg);
+            color: var(--muted);
+            padding: 0.1rem 0.45rem;
+            border-radius: 3px;
+            margin-right: 0.3rem;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--muted);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <nav>
+        <div class="nav-links">
+            <a href="#about" class="brand">rahaf</a>
+            <a href="#about">about</a>
+            <a href="#projects">projects</a>
+            <a href="#experience">experience</a>
+            <a href="#notes">notes</a>
+        </div>
+        <button class="theme-btn" onclick="toggleTheme()" id="theme-toggle">light</button>
+    </nav>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <h1>Finance, Cybersecurity &amp; Ops</h1>
+        <p>
+            Hi, I'm <strong>Rahaf Alahmari</strong>, based in Riyadh. I operate at the intersection of 
+            <code>financial risk</code>, <code>cybersecurity</code>, and <code>startup operations</code>.
+        </p>
+        <p>
+            Most people pick one lane—either spreadsheets or terminals. I enjoy bridging both: auditing SME financial statements and building macroeconomic datasets by day, while analyzing threat intelligence, subnetting, and automating workflows with Python by night.
+        </p>
+
+        <h3>Currently up to:</h3>
+        <ul>
+            <li>Managing site &amp; startup operations at <strong>The Garage (الكراج)</strong> in Riyadh.</li>
+            <li>Prepping for <strong>CFA Level 1</strong> and <strong>CME-4</strong> certifications.</li>
+            <li>Training for an <strong>Ironman 70.3</strong> hybrid block (lifting + endurance) and learning Mandarin (<code>HSK 1</code>).</li>
+        </ul>
+    </section>
+
+    <!-- PROJECTS & CASE STUDIES -->
+    <section id="projects">
+        <h2>projects &amp; findings</h2>
+
+        <div class="project-card">
+            <h3>Saudi Macroeconomic Database (12 Indicators)</h3>
+            <div class="meta">2026 &middot; FinTech &amp; Economic Research</div>
+            <p>
+                Built an integrated macroeconomic dataset tracking 12 core indicators for Saudi Arabia by consolidating public feeds from <code>SAMA</code>, <code>GASTAT</code>, the <code>World Bank</code>, and the <code>IMF</code> to support SME credit risk benchmarking.
+            </p>
+            <div>
+                <span class="tag">Python</span>
+                <span class="tag">Financial Modeling</span>
+                <span class="tag">Macroeconomics</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Threat Assessment &amp; Incident Analysis</h3>
+            <div class="meta">2026 &middot; Cybersecurity &amp; OSINT</div>
+            <p>
+                Analyzed regional APT campaigns (including <em>Boggy Serpens</em>), mapping initial access vectors (spear-phishing &amp; VBA macro abuse), payload execution (<code>LampoRAT</code>), and CIA triad mitigation strategies.
+            </p>
+            <pre><code>// Example focus areas in lab environments:
+[1] Network Packet Inspection &amp; Subnetting (/26, /27)
+[2] OSINT Reconnaissance &amp; Attack Surface Mapping
+[3] Incident Containment &amp; Playbook Automation</code></pre>
+            <div>
+                <span class="tag">Security+</span>
+                <span class="tag">TryHackMe</span>
+                <span class="tag">Threat Intel</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Automated Ops &amp; Attendance Dashboards</h3>
+            <div class="meta">2026 &middot; Data Operations</div>
+            <p>
+                Designed data cleaning pipelines and interactive dashboards to track company attendance, visitor flows, and office space allocation, alongside deploying a custom room-booking web portal.
+            </p>
+            <div>
+                <span class="tag">Power BI</span>
+                <span class="tag">Python</span>
+                <span class="tag">Replit</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE & CREDENTIALS -->
+    <section id="experience">
+        <h2>experience &amp; credentials</h2>
+
+        <h3>Operations &amp; Site Management — The Garage</h3>
+        <div class="meta">Riyadh &middot; Current</div>
+        <p>Coordinating site operations, visitor workflows, attendance analytics, and workspace allocation for tech startups.</p>
+
+        <h3>Financial Operations &amp; Risk Analyst (Co-op) — Abwab.ai</h3>
+        <div class="meta">Riyadh &middot; 2026</div>
+        <p>Evaluated B2B SME creditworthiness, audited bank and financial statements, and developed macroeconomic indicators.</p>
+
+        <h3>Network Security Trainee — MCIT</h3>
+        <div class="meta">Riyadh &middot; 2023</div>
+        <p>Completed a 3-month cooperative training program focused on network security fundamentals and infrastructure protection.</p>
+
+        <h3>Education &amp; Certifications</h3>
+        <ul>
+            <li><strong>B.Sc. in Finance</strong> — Arab Open University / Saudi Electronic University</li>
+            <li><strong>Diploma in Cybersecurity</strong></li>
+            <li><strong>Certifications:</strong> CompTIA Security+ (SY0-701), CME-1, FMVA</li>
+        </ul>
+    </section>
+
+    <!-- NOTES -->
+    <section id="notes">
+        <h2>notes</h2>
+        <p>Short logs on things I'm studying or building:</p>
+        <ul>
+            <li><code>[2026-11]</code> <strong>Subnetting &amp; ANDing:</strong> Quick mental math tricks for /26 and /27 masks.</li>
+            <li><code>[2026-10]</code> <strong>CFA Level 1:</strong> Notes on Financial Statement Analysis &amp; Derivatives pricing.</li>
+            <li><code>[2026-08]</code> <strong>Hybrid Training:</strong> Balancing Zone 2 runs with heavy lifting without burning out.</li>
+        </ul>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div>rahaf alahmari &copy; 2026</div>
+        <div>
+            <a href="https://linkedin.com" target="_blank">linkedin</a> &middot;
+            <a href="https://github.com" target="_blank">github</a> &middot;
+            <a href="mailto:your.email@example.com">email</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const btn = document.getElementById('theme-toggle');
+            if (html.getAttribute('data-theme') === 'light') {
+                html.removeAttribute('data-theme');
+                btn.textContent = 'light';
+            } else {
+                html.setAttribute('data-theme', 'light');
+                btn.textContent = 'dark';
+            }
+        }
+    </script>
+</body>
+</html>
